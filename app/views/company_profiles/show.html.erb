@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @company_profile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @company_profile.last_name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @company_profile.phone %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @company_profile.company_name %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= image_tag @company_profile.logo_url, width: '100px' %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @company_profile.description %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @company_profile.street %>
+</p>
+
+<p>
+  <strong>Suburb:</strong>
+  <%= @company_profile.suburb %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @company_profile.postcode %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @company_profile.country %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @company_profile.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @company_profile.longitude %>
+</p>
+
+<p>
+  <strong>Company culture:</strong>
+  <%= @company_profile.company_culture %>
+</p>
+
+<p>
+  <strong>Company type:</strong>
+  <%= @company_profile.company_type %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @company_profile.user %>
+</p>
+
+<%= link_to 'Edit', edit_company_profile_path(@company_profile) %> |
+<%= link_to 'Back', company_profiles_path %>

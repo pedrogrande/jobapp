@@ -1,0 +1,25 @@
+<%= simple_form_for(@company_profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :phone %>
+    <%= f.input :company_name %>
+    <%= f.input :logo %>
+    <%= f.input :description %>
+    <%= f.input :street %>
+    <%= f.input :suburb %>
+    <%= f.input :postcode %>
+    <%= f.input :country %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+    <%= f.input :company_culture %>
+    <%= f.input :company_type %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
