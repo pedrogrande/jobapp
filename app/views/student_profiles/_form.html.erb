@@ -1,0 +1,21 @@
+<%= simple_form_for(@student_profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :phone %>
+    <%= f.input :bio %>
+    <%= f.input :website %>
+    <%= f.input :github_username, label: 'Github Username' %>
+    <%= f.input :linkedin_url %>
+    <%= f.input :photo %>
+    <%= f.input :cv %>
+    <%= f.input :city %>
+    <%= f.input :country, priority: ['Australia'] %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

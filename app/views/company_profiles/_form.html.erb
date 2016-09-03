@@ -2,21 +2,19 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
+    <%= f.input :first_name, label: 'Enter your first name' %>
+    <%= f.input :last_name, placeholder: 'Enter your last name' %>
     <%= f.input :phone %>
     <%= f.input :company_name %>
+    <%= f.input :company_type, collection: ['New Startup', 'Established Startup', 'Agency', 'Small Business', 'Other'] %>
     <%= f.input :logo %>
-    <%= f.input :description %>
+    <%= f.input :description, input_html: { rows: 5 } %>
+    <%= f.input :company_culture %>
     <%= f.input :street %>
     <%= f.input :suburb %>
     <%= f.input :postcode %>
-    <%= f.input :country %>
-    <%= f.input :latitude %>
-    <%= f.input :longitude %>
-    <%= f.input :company_culture %>
-    <%= f.input :company_type %>
-    <%= f.association :user %>
+    <%= f.input :country, priority: ['Australia', 'New Zealand'] %>
+
   </div>
 
   <div class="form-actions">

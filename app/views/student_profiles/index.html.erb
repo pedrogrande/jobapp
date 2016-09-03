@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Student Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Phone</th>
+      <th>Bio</th>
+      <th>Website</th>
+      <th>Github username</th>
+      <th>Linkedin url</th>
+      <th>Photo</th>
+      <th>Cv</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student_profiles.each do |student_profile| %>
+      <tr>
+        <td><%= student_profile.first_name %></td>
+        <td><%= student_profile.last_name %></td>
+        <td><%= student_profile.phone %></td>
+        <td><%= student_profile.bio %></td>
+        <td><%= student_profile.website %></td>
+        <td><%= student_profile.github_username %></td>
+        <td><%= student_profile.linkedin_url %></td>
+        <td><%= student_profile.photo %></td>
+        <td><%= student_profile.cv %></td>
+        <td><%= student_profile.city %></td>
+        <td><%= student_profile.country %></td>
+        <td><%= student_profile.user %></td>
+        <td><%= link_to 'Show', student_profile %></td>
+        <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>
+        <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student Profile', new_student_profile_path %>

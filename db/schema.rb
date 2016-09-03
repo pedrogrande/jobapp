@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827041411) do
+ActiveRecord::Schema.define(version: 20160903052801) do
 
   create_table "company_profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -41,6 +41,49 @@ ActiveRecord::Schema.define(version: 20160827041411) do
     t.datetime "updated_at"
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
+  end
+
+  create_table "skill_categories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.integer  "skill_category_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["skill_category_id"], name: "index_skills_on_skill_category_id"
+  end
+
+  create_table "student_profiles", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone"
+    t.text     "bio"
+    t.string   "website"
+    t.string   "github_username"
+    t.string   "linkedin_url"
+    t.string   "photo"
+    t.string   "cv"
+    t.string   "city"
+    t.string   "country"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["user_id"], name: "index_student_profiles_on_user_id"
+  end
+
+  create_table "user_skills", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_id"], name: "index_user_skills_on_skill_id"
+    t.index ["user_id"], name: "index_user_skills_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

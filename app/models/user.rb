@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :company_profiles
+  has_many :user_skills
+  has_many :skills, through: :user_skills
   rolify
 
   after_create :assign_role
